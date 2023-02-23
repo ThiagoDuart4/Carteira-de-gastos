@@ -1,0 +1,58 @@
+.Historico{
+    width: 100%;
+    height:100%;
+   display: flex;
+   flex-direction: column;
+    position: relative;
+ right: 50px;
+}
+
+
+
+.Historico h1{
+    color: #FFBD59;
+margin-top: 100px;
+}
+
+.card-historico{
+    max-width: 800px;
+    min-width: 700px;
+    height: 100px;
+  padding: 10px;
+    display: flex;
+    align-items: center;
+   background-color: white;
+border-radius: 20px;
+margin-bottom: 10px;
+}
+
+.card-historico ul li{
+    color: #FFBD59;
+    font-weight: 600;
+}
+
+.card-historico ul {
+    list-style: none;
+}
+
+
+.card-historico  img{
+    position: relative;
+    top:35px ;
+    left: 40px;
+    cursor: pointer;
+}
+.card-historico  img:hover{
+    transform: scale(1.2);
+    transition: 0.4s;
+}
+.descricao{
+    width: 25%;
+}
+.ValorEntrada{
+    width: 25%;
+}
+.ValorSaida{
+    width: 25%;
+}
+

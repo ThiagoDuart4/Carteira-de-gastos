@@ -1,0 +1,66 @@
+.LandingPage{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+  
+}
+
+.LandingPage section{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.LandingPage .info{
+    position: relative;
+    right: 100px;
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+
+.LandingPage .info h3{
+    width: 150px;
+letter-spacing: 2px;
+font-weight: 600;
+font-size:1.5em;
+margin-bottom: 0;
+}
+
+.LandingPage .info h1{
+    font-weight: bold;
+    font-size:5em;
+    margin: 0px 0px 0px -10px;
+  
+}
+
+.LandingPage .info  span{
+    margin-top: 0;
+    font-size:0.6em;
+    font-weight: 400;
+    opacity: 0.6;
+    margin-bottom: 50px;
+    letter-spacing: 3px;
+}
+
+.LandingPage .info a{
+    text-decoration: none;
+    background-color:#FFBD59 ;
+    color: white;
+   text-align: center;
+   padding: 20px;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+
+}
+
+
+.LandingPage .info a:hover{
+    background-color: white;
+    color: #FFBD59;
+    transition: 0.4s;
+    transform: scale(1.1.5);
+}
