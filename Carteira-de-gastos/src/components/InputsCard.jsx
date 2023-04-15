@@ -1,8 +1,11 @@
 import React from "react";
 import "../styles/InputsCard.css";
+import style from "../styles/InputsCard.css";
 import { useState } from "react";
 import axios from "axios";
 import Card from "../components/Card";
+import Cartao from "../components/cartao";
+import Enviar from "../image/enviar.png"
 
 const InputsCard = () => {
   const [DataInput, setDataInput] = useState({
@@ -12,6 +15,8 @@ const InputsCard = () => {
     tipo: "",
   });
 
+  const [teste,setTeste] = useState(0)
+
   const formChange = (e) => {
     setDataInput((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
@@ -20,78 +25,51 @@ const InputsCard = () => {
     e.preventDefault();
     try {
       await axios.post("http://localhost:8800/gastos", DataInput);
-      window.location.reload();
+     
     } catch (err) {
       console.log(err);
     }
+// ADICIONANDO NOTIFICAO
+    setTeste( teste + 1)
   };
+ console.log(teste)
+  
+
+  // INPUT
+
+  // // const EffectLabel =()=>{
+  //   const teste = document.querySelector("#label")
+  //       teste.style.color = "#FFBD59"
+  //       teste.style.transform = "translateY(-10px)"
+  //       teste.style.fontSize = "0.8em"
+  // }
 
   return (
     <div className="InputsCard">
-      <div className="Infos-InputsCard">
-        
-        <div className="desc">
-          <div className="info">
-            <label htmlFor="descricao"> Descrição</label>
-            <textarea
-              name="descricao"
-              id=""
-              cols="40"
-              rows="8"
-              onChange={formChange}
-            ></textarea>
+      <h1>Planejamento  <span>financeiro</span></h1>
+      <Cartao />
+      <form>
+        <div className="Info">
+
+          <div className="Desc">
+            <label htmlFor="descricao" id="label"> descrição</label>
+            <input type="text" name="descricao" id="descricao" onChange={formChange} />
           </div>
+
+          <select name="tipo" id="SelectTipo" onChange={formChange} required>
+            <option value="">Tipo</option>
+            <option value="entrada">Entrada</option>
+            <option value="saida">Saida</option>
+          </select>
+
+        </div>
+        <div className="valor">
+          <label htmlFor="Valor Entrada">Valor: <input type="text" name="ValorEntrada" onChange={formChange}/></label>
+          <img src={Enviar} onClick={btnEnviar}></img>
         </div>
 
-        <div className="Valores">
-          {" "}
-          <div className="info">
-            <label htmlFor="Valor Entrada">Entrada</label>
-            <input type="text" name="ValorEntrada" onChange={formChange} />
-          </div>
-          <div className="info">
-            <label htmlFor="Valor Saida">Saida</label>
-            <input type="text" name="ValorSaida" onChange={formChange} />
-          </div>
-        </div>
+      </form>
 
-        <div className="Envios">
-          <div className="info">
-            <div className="tipo">
-              <label htmlFor="tipo">Tipo</label>
-              <select name="tipo" id="SelectEntrada" onChange={formChange}>
-              <option value="">Selecione</option>
-                <option value="entrada">Entrada</option>
-                <option value="saida">Saida</option>
-              </select>
-            </div>
-          </div>
-
-          <div className="info">
-            <button type="submit" onClick={btnEnviar}>
-              {" "}
-              Enviar
-            </button>
-          </div>
-        </div>
-      </div>
-
-      {/* 
-      <div className="Infos-InputsCard">
-      
-      
-    
-
-
-   
-       
-        </div>
-        
-    </div>
-      </div>
-      */}
-
-      <Card />
     </div>
   );
 };

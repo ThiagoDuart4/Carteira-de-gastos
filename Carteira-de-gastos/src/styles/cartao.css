@@ -1,0 +1,60 @@
+.cartao{
+    width:15vw;
+    min-width: 240px;
+    min-height: 135px;
+    height:15vh;
+    background: rgb(244,164,44);
+    background: linear-gradient(90deg, rgba(244,164,44,1) 0%, rgba(255,189,89,1) 35%, rgba(255,229,190,1) 100%);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+   border-radius: 10px;
+   padding: 30px;
+    left: 30px;
+   position: relative;
+}
+
+.cartao button{
+    width: 10px;
+    height: 10px;
+}
+
+.cartao .info , .cartao .Saldo{
+    display: flex;
+    justify-content: space-between;
+}
+.cartao .info{
+
+}
+.cartao .info h3{
+  margin: 0;
+  padding: 0;
+}
+
+.cartao .info span{
+    font-size: 0.8em;
+}
+
+.cartao .info img {
+    width: 40px;
+    position: relative;
+    bottom: 15px;
+}
+.cartao  .Saldo {
+    position: relative;
+    top: 30px;
+}
+.cartao  .Saldo h1{
+    margin: 0;
+    padding: 0;
+}
+
+.cartao  .Saldo p{
+    width: 200px;
+    font-size: 0.6em;
+}
+
+.cartao  .Saldo  img{
+    width: 40px;
+    height: 40px;
+    position: relative;
+    top: 30px;
+}
