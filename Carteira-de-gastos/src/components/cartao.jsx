@@ -8,8 +8,6 @@ import axios from 'axios'
 const Cartao = () => {
 
   const [Data,setData] = useState([])
- 
-  
 
     useEffect(() =>{ const fetchData = async ()=>{
         try{

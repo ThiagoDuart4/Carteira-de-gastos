@@ -1,13 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
 import "../styles/InputsCard.css";
 import style from "../styles/InputsCard.css";
 import { useState } from "react";
 import axios from "axios";
-import Card from "../components/Card";
 import Cartao from "../components/cartao";
 import Enviar from "../image/enviar.png"
 
-const InputsCard = () => {
+
+
+const InputsCard = ({handleNoti}) => {
+
+
+
+
   const [DataInput, setDataInput] = useState({
     descricao: "",
     ValorEntrada: "",
@@ -15,7 +20,7 @@ const InputsCard = () => {
     tipo: "",
   });
 
-  const [teste,setTeste] = useState(0)
+  const [teste,setTeste] = useState(1)
 
   const formChange = (e) => {
     setDataInput((prev) => ({ ...prev, [e.target.name]: e.target.value }));
@@ -25,24 +30,18 @@ const InputsCard = () => {
     e.preventDefault();
     try {
       await axios.post("http://localhost:8800/gastos", DataInput);
-     
+      window.location.reload()
     } catch (err) {
       console.log(err);
     }
 // ADICIONANDO NOTIFICAO
     setTeste( teste + 1)
+
+    handleNoti(teste)
   };
- console.log(teste)
+
   
 
-  // INPUT
-
-  // // const EffectLabel =()=>{
-  //   const teste = document.querySelector("#label")
-  //       teste.style.color = "#FFBD59"
-  //       teste.style.transform = "translateY(-10px)"
-  //       teste.style.fontSize = "0.8em"
-  // }
 
   return (
     <div className="InputsCard">
@@ -51,12 +50,13 @@ const InputsCard = () => {
       <form>
         <div className="Info">
 
-          <div className="Desc">
-            <label htmlFor="descricao" id="label"> descrição</label>
-            <input type="text" name="descricao" id="descricao" onChange={formChange} />
-          </div>
+        <div className="form-group">
+        <input type="text" name="descricao" onChange={formChange} required />
+       <label htmlFor="descricao">Descrição</label>
+      </div>
+      
 
-          <select name="tipo" id="SelectTipo" onChange={formChange} required>
+          <select name="tipo" id="SelectTipo" onChange={formChange}>
             <option value="">Tipo</option>
             <option value="entrada">Entrada</option>
             <option value="saida">Saida</option>

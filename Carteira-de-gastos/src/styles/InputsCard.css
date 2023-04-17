@@ -17,12 +17,15 @@ border-radius: 20px;
 }
 
 .InputsCard h1 span{
-    color: #FFBD59;
+    color:  #FFBD59;
 }
 
 .InputsCard form{
-    width: 100%;
+    width: 80%;
     height: 40%;
+    padding-left: 40px;
+    flex-direction: column;
+ 
 }
 
 .InputsCard form  .Info , .InputsCard form .valor{
@@ -30,44 +33,50 @@ border-radius: 20px;
 }
 
 .InputsCard form  .Info {
-   
-    justify-content: space-between;
+
     width: 100%;
     padding-top:50px ;
     display: flex;
 }
-.InputsCard form  .Info .Desc{
-    flex-direction: column;
-    display: flex;
+.form-group {
     position: relative;
-}
-
-.InputsCard form  .Info .Desc input{
+    margin-bottom: 1.5rem;
+  }
+  
+  .form-group  input {
+    width: 60%;
+    padding: 0.4rem 0;
     border: none;
+    border-bottom: 2px solid #ccc;
     outline: none;
-    border-bottom: 1px solid black;
-}
-.InputsCard form  .Info .Desc label{
-    font-weight:bold ;
+    font-size: 1.2rem;
+  }
+  
+  .form-group  label {
     position: absolute;
-    top: -5px;
-    cursor: text;
-    transition: 0.5s;
-}
-
-.InputsCard form  .Info .Desc input:focus~label {
-    transform: translateY(-24px);
-    font-size: 0.8em;
-}
-
-
-.InputsCard form  .Info .Desc input:focus{
-    
-}
-
+    top: 10px;
+    left: 0;
+    transition: 0.2s ease all;
+    pointer-events: none;
+    color: #999;
+  }
+  
+  .form-group  input:focus + label{
+    top: -1rem;
+    left: 0;
+    font-size: 0.8rem;
+    color: #FFBD59;
+  }
+  
 .InputsCard form   #SelectTipo{
     width: 100px;
     height: 30px;
+    outline: none;
+    cursor: pointer;
+    border-radius: 8px;
+    border: 1px solid #999 ;
+    font-weight: bold;
+
 }
 
 
@@ -88,17 +97,16 @@ border-radius: 20px;
     width: 100px;
     font-size: 1em;
     outline: none;
+    color: #FFBD59;
 }
-
-.InputsCard form .valor input:focus + .InputsCard form .valor label{
-    border: 1px solid red;
-}
-
 
 .InputsCard form .valor img{
     width: 40px;
     height: 40px;
     cursor: pointer;
+    position: relative;
+top: 30px;
+    left: 40px;
 }
 
 

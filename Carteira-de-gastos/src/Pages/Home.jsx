@@ -4,21 +4,32 @@ import Saida from "../components/Saida";
 import Inputs from  "../components/InputsCard";
 import Historico from "../components/Historico";
 import "../styles/App.css"
+import { useState } from "react";
+
+
 
 function App() {
+
+ const [notificacao,setNotificacao] = useState()
+
+ const handleNoti = (noti) => {
+setNotificacao(noti)
+ }
+ 
+
   return (
  <>
    
     <div className="App">
-        <Header/>
+     
+        <Header notificacao={notificacao}/>
         <main>
-             <section> <Inputs/> </section>  
-                    
+             <section> <Inputs handleNoti ={handleNoti}/> </section>  
+                  
              <section><Historico/></section>          
 
         </main>
-      
-       
+
     </div>
     </>
   );

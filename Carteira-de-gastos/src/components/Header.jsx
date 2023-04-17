@@ -1,22 +1,25 @@
-import React from 'react'
+
 import "../styles/Header.css"
 import { Outlet, Link } from "react-router-dom";
+import Notificacao from './Notificacao';
 import Voltar from "../image/Voltar.png"
-import Notificaçoes from "../image/notificacao.png"
-const Header = () => {
-  return (
-        <header>
-          <div className="logo">
-            <span className='Amarelo'>Duart</span>
-            <span>Consultoria</span>
-          </div>
-          <div className="notificacao">
-           <img src={Notificaçoes} alt=""  className='icon'/>
-           <Link  to="/"><img src={Voltar} alt="" /></Link>
-          </div>
+const Header = (notificacao) => {
 
-         
-        </header>
+  return (
+    <header>
+      <div className="logo">
+
+        <span className='Amarelo'>Duart</span>
+        <span>Consultoria</span>
+      </div>
+      <div className="Nav">
+        <Notificacao />
+        <Link to="/"><img src={Voltar} alt="" id='Voltar' /></Link>
+      </div>
+
+    </header>
+
+
   )
 }
 

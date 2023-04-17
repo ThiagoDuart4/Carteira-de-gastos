@@ -5,81 +5,69 @@ import axios from 'axios'
 import lixeira from "../image/lixeira.png"
 
 const Historico = () => {
-  const [Data,setData] = useState([])
+  const [Data, setData] = useState([])
+  const [api,setApi] = useState('todos')
 
-  useEffect(()=>{
-    const fetchData = async ()=>{
-        try{
-            const res = await axios.get("http://localhost:8800/gastos")
-            setData(res.data);
-            console.log(res.data)
+  console.log(Data)
 
-        }catch(err){
-            console.log(err)
-        }
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const res = await axios.get(`http://localhost:8800/${api}`)
+        setData(res.data);
+
+      } catch (err) {
+        console.log(err)
+      }
     }
     fetchData()
-}, [])
+  }, [api])
 
+  const DelData = async (id) => {
+    console.log(id)
+    try {
+      await axios.delete(`http://localhost:8800/${api}/`+ id)
+      window.location.reload()
+    } catch (err) {
+      console.log(err)
 
-const DelData =async (id)=>{
-  try {
-    await axios.delete("http://localhost:8800/gastos/"+id)
-    window.location.reload()
-} catch (err) {
-    console.log(err)
-    
-}
-}
-
-
+    }
+  }
 
   return (
-   <div className="Historico">
-    
-      <h1>Resumo financeiro</h1>
+    <div className="Historico">
 
+      <div className="titulo"> <h1>Resumo financeiro</h1>
+        <button value="todos" onClick={(e) => {
+      setApi(e.target.value)
+          
+        }}>Todos</button>
+        <button value="ValorEntrada"  onClick={(e) => {
+         setApi(e.target.value)
+        }}>Entrada</button>
+        <button value="ValorSaida" onClick={(e) => {
+          setApi(e.target.value)
+        }}>Saida</button></div>
 
-        {
-          Data.map((info,key)=>{
-            return(
-              <div className="card-historico" key={key}>
-                <div className="descricao">
-                  <h3>descrição</h3>
-                 <ul>
-                  <li>{info.descricao}</li>
-                 </ul>
-                </div>
-               
-              <div className="ValorEntrada">
-              <h3>Entrada</h3>
-              <ul>
-                  <li>{info.ValorEntrada}</li>
-                 </ul>
-              </div>
-                
-              <div className="ValorSaida">
-              <h3>Saida</h3>
-              <ul>
-                  <li>{info.ValorSaida}</li>
-                 </ul>
-              </div>
-                
-              <div className="tipo">
-              <h3>Tipo</h3>
-              <ul>
-                  <li>{info.tipo}</li>
-                 </ul>
-                 
-              </div>
-              
-              <img src={lixeira} alt=""  onClick={()=>DelData(info.id) }/>
-              </div>
-            )
-          })
-        }
-    
-   </div>
+      {
+        Data.map((info, key) => {
+          return (
+            <div className="card-historico" key={key}>
+              <section>
+                <h1>{info.descricao}</h1>
+                <h3>R${info.ValorEntrada}</h3>
+              </section>
+              <section>
+                  <h3>{info.tipo}</h3>
+                <img src={lixeira} alt="" onClick={() => DelData(info.id)} />
+                </section>
+           
+            </div>
+          )
+        })
+      }
+
+    </div>
   )
 }
 
