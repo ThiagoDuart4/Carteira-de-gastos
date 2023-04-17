@@ -2,6 +2,7 @@ import React from 'react'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
 import ImgNotificaçoes from "../image/notificacao.png"
+import FecharImg from "../image/fechar.png"
 import "../styles/Notificacao.css"
 
 const Notificacao = () => {
@@ -62,17 +63,16 @@ const Notificacao = () => {
             <div className="NavBar">
 
                 <div className="infoNoti" >
-                    <button onClick={() => {
+                    <img src={FecharImg} onClick={() => {
                         Fechar()
-                    }}> fechar</button>
+                    }} />
                     {
                         Data.map((data, key) => {
                             return (
 
                                 <div className="Card" key={key}>
-                                    <h2>Voce deu uma {data.tipo}</h2>
-                                    <span>descrição:{data.descricao}</span>
-                                    <h3>Valor:{data.ValorEntrada}</h3>
+                                    <h1>{data.descricao}</h1>
+                                    {data.tipo == 'entrada'?<p>Você fez um deposito de <span>R${data.ValorEntrada}</span></p> :<p> Você retirou <span>R${data.ValorEntrada}</span></p>}
                                 </div>
 
                             )
