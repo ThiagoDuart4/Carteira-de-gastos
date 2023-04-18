@@ -24,9 +24,9 @@ setNotificacao(noti)
      
         <Header notificacao={notificacao}/>
         <main>
-             <section> <Inputs handleNoti ={handleNoti}/> </section>  
+             <section id="Resp" > <Inputs handleNoti ={handleNoti}/> </section>  
                   
-             <section><Historico/></section>          
+             <section ><Historico/></section>          
 
         </main>
 

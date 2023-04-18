@@ -42,9 +42,8 @@
     box-sizing: border-box;
     width: 80%;
    max-width: 800px;
-   min-width: 400px;
+   min-width: 550px;
     height: 120px;
-
     display: flex;
     flex-direction: column;
    background-color: white;
@@ -61,7 +60,6 @@ margin-bottom: 15px;
     padding: 20px;
 }
 
-
 .card-historico  img{
     cursor: pointer;
 }
@@ -69,3 +67,31 @@ margin-bottom: 15px;
     transform: scale(1.2);
     transition: 0.4s;
 }
+
+.OverlayHistorico{
+    display: none;
+}
+@media screen and (max-width: 1137px){
+    .Historico{
+     
+       display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+     right: 0px;
+    }
+
+    .Historico .titulo{
+        width: 70%;
+        justify-content: space-between;
+        margin-top: 20px;
+    }
+   }
+
+   @media screen and (max-width: 807px){
+
+
+    .Historico{
+     display: none;
+    }
+   }

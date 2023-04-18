@@ -1,14 +1,11 @@
 .InputsCard{
- width: 25vw;
- height: 500vh;
- max-width: 400px;
- min-width: 300px;
- max-height: 500px;
+width: 380px;
  background-color: white;
  display: flex;
 padding: 40px;
 flex-direction: column;
 border-radius: 20px; 
+
 }
 
 .InputsCard h1{
@@ -84,6 +81,7 @@ border-radius: 20px;
     justify-content: space-between;
     width: 100%;
     display: flex;
+    align-items: center;
 }
 
 .InputsCard form .valor label{
@@ -107,6 +105,7 @@ border-radius: 20px;
     position: relative;
 top: 30px;
     left: 40px;
+
 }
 
 
@@ -114,3 +113,29 @@ top: 30px;
 
 /* INPUT  */
 
+@media screen and (max-width: 1137px){
+ .InputsCard{
+    margin-top: 30px;
+    padding: 30px;
+ }
+}
+
+  @media screen and (max-width: 807px){
+
+    .InputsCard{
+        width:300px;
+    }
+
+    .InputsCard form{
+        padding-left: 20px;
+    }
+    .InputsCard form .valor img{
+        width: 30px;
+        height: 30px;
+        position: relative;
+    top: 20px;
+        left: 40px;
+    
+    }
+   
+   }

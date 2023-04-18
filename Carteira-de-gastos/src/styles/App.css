@@ -3,6 +3,7 @@ main{
     height:91vh;
     display: flex;
     align-items: center;
+  
 }
 main section{
     width: 50%;
@@ -18,3 +19,22 @@ main section{
     justify-content: center;
 }
 
+
+
+@media screen and (max-width: 1137px){
+    main{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        
+            }
+    main section{
+   width: 100%;
+
+    }
+
+    #Resp{
+        position: relative;
+        top: 50px;
+    }
+}

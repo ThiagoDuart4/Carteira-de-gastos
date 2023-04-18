@@ -40,7 +40,11 @@ transition: 0.4s;
     margin-right: 20px;
 }
 
-
+@media screen and (max-width: 1137px){
+   header{
+    border: none;
+   }
+   }
 
 
 

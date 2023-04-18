@@ -1,8 +1,6 @@
 .cartao{
-    width:15vw;
-    min-width: 240px;
-    min-height: 135px;
-    height:15vh;
+width: 250px;
+height: 130px;
     background: rgb(244,164,44);
     background: linear-gradient(90deg, rgba(244,164,44,1) 0%, rgba(255,189,89,1) 35%, rgba(255,229,190,1) 100%);
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -58,3 +56,19 @@
     position: relative;
     top: 30px;
 }
+
+@media screen and (max-width: 807px){
+
+  
+    .cartao{
+    width: 220px;
+    position: relative;
+    left: 0px;
+    }
+    
+    .cartao .info img {
+     
+        position: relative;
+   right: -20px;
+    }
+   }

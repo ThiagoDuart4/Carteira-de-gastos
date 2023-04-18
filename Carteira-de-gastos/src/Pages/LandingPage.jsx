@@ -5,6 +5,10 @@ import { Outlet, Link } from "react-router-dom";
 
 const LandingPage = () => {
   return (
+    <>
+      <div className="blur">
+        
+      </div>
     <div className="LandingPage">
 
         <section >
@@ -20,6 +24,8 @@ const LandingPage = () => {
             <img src={Controle} alt="" />
         </section>
     </div>
+    </>
+    
   )
 }
 

@@ -16,14 +16,40 @@ const db = mysql.createConnection({
 app.use(express.json());
 app.use(cors());
 
-
-app.get("/gastos", (req, res)=>{
+app.get("/todos", (req, res)=>{
     const q = "SELECT * FROM gastos"
     db.query(q,(err,data)=>{
         if(err) return res.json(err)
         return res.json(data)
     })
 })
+
+app.get("/notificacao", (req, res)=>{
+    const q = "select count(id) AS notificacao from gastos; "
+    db.query(q,(err,data)=>{
+        if(err) return res.json(err)
+        return res.json(data)
+    })
+})
+
+
+app.get("/ValorEntrada", (req, res)=>{
+    const q = "SELECT * FROM gastos WHERE tipo = 'entrada'"
+    db.query(q,(err,data)=>{
+        if(err) return res.json(err)
+        return res.json(data)
+    })
+})
+
+app.get("/ValorSaida", (req, res)=>{
+    const q = "SELECT * FROM gastos WHERE tipo = 'saida'"
+    db.query(q,(err,data)=>{
+        if(err) return res.json(err)
+        return res.json(data)
+    })
+})
+
+
 
 app.get("/saida", (req, res)=>{
     const q = "SELECT SUM(ValorSaida) AS  ValorSaida FROM gastos "
@@ -69,7 +95,7 @@ app.post("/gastos", (req,res)=>{
 })
 
 
-app.delete("/gastos/:id", (req, res)=>{
+app.delete("/todos/:id", (req, res)=>{
     const DataId = req.params.id;
     const q = "DELETE FROM gastos  WHERE id = ?"
 
