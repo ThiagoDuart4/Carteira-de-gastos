@@ -12,7 +12,7 @@ const Historico = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get(`http://localhost:8800/${api}`)
+        const res = await axios.get(`https://backend-kappa-five.vercel.app/${api}`)
         setData(res.data);
 
       } catch (err) {
