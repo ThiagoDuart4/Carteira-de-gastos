@@ -10,7 +10,7 @@ const Saida = () => {
     useEffect(()=>{
         const fetchData = async ()=>{
             try{
-                const res = await axios.get("http://localhost:8800/saida")
+                const res = await axios.get("https://backend-kappa-five.vercel.app/saida")
                 setDataSaida(res.data);
                 console.log(res.data)
     

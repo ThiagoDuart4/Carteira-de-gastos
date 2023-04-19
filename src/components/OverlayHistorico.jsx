@@ -28,7 +28,7 @@ const OverlayHistorico = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const res = await axios.get(`http://localhost:8800/${api}`)
+                const res = await axios.get(`https://backend-kappa-five.vercel.app/${api}`)
                 setData(res.data);
 
             } catch (err) {
@@ -41,7 +41,7 @@ const OverlayHistorico = () => {
     const DelData = async (id) => {
         console.log(id)
         try {
-            await axios.delete(`http://localhost:8800/${api}/` + id)
+            await axios.delete(`https://backend-kappa-five.vercel.app/${api}/` + id)
             window.location.reload()
         } catch (err) {
             console.log(err)

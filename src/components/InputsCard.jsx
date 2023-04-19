@@ -29,7 +29,7 @@ const InputsCard = ({handleNoti}) => {
   const btnEnviar = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:8800/gastos", DataInput);
+      await axios.post("https://backend-kappa-five.vercel.app/gastos", DataInput);
       window.location.reload()
     } catch (err) {
       console.log(err);

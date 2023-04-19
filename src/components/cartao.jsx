@@ -11,7 +11,7 @@ const Cartao = () => {
 
     useEffect(() =>{ const fetchData = async ()=>{
         try{
-            const res = await axios.get("http://localhost:8800/total")
+            const res = await axios.get("https://backend-kappa-five.vercel.app/total")
             setData(res.data[0]);
 
         }catch(err){

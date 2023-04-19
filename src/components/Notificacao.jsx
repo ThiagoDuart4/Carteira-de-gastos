@@ -25,7 +25,7 @@ const Notificacao = () => {
     useEffect(() => {
         const fetchData = async () => {
           try {
-            const res = await axios.get("http://localhost:8800/todos")
+            const res = await axios.get("https://backend-kappa-five.vercel.app/todos")
             setData(res.data);
           } catch (err) {
             console.log(err)
@@ -37,7 +37,7 @@ const Notificacao = () => {
       useEffect(() => {
         const fetchData = async () => {
           try {
-            const res = await axios.get("http://localhost:8800/notificacao")
+            const res = await axios.get("https://backend-kappa-five.vercel.app/notificacao")
             setNotificacao(res.data[0]);
     
           } catch (err) {
