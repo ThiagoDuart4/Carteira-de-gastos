@@ -61,14 +61,9 @@ height: 130px;
 
   
     .cartao{
-    width: 220px;
+   
     position: relative;
     left: 0px;
     }
     
-    .cartao .info img {
-     
-        position: relative;
-   right: -20px;
-    }
    }

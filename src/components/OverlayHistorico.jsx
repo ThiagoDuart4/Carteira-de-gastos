@@ -61,9 +61,10 @@ const OverlayHistorico = () => {
                     <section>
                     </section>
                     <section className='Info'>
-                    <img  src={FecharImg}onClick={Fechar} id='ButtonFechar'/>
+             
                         <div className="MapInfo">
                             <div className="InfoTitulo">
+                              
                                 <h1>Resumo financeiro</h1>
                                 <div className="button"> <button value="todos" onClick={(e) => {
                                     setApi(e.target.value)
@@ -74,11 +75,15 @@ const OverlayHistorico = () => {
                                     }}>Entrada</button>
                                     <button value="ValorSaida" onClick={(e) => {
                                         setApi(e.target.value)
-                                    }}>Saida</button></div>
-
+                                    }}>Saida</button>
+                     
+                                    
+                                    </div>
+               
+                                    <img  src={FecharImg}onClick={Fechar} id='ButtonFechar'/>
                                
                             </div>
-                          
+                           
                             {
                                 Data.map((info, key) => {
                                     return (
