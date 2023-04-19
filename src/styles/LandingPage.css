@@ -1,0 +1,121 @@
+
+body{
+
+}
+
+.LandingPage{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+align-items: center;
+justify-content: center;
+overflow: hidden;
+}
+
+.LandingPage section{
+    max-width: 650px;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.LandingPage .info{
+    position: relative;
+    right: 100px;
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+
+.LandingPage .info h3{
+    width: 150px;
+letter-spacing: 2px;
+font-weight: 600;
+font-size:1.5em;
+margin-bottom: 0;
+}
+
+.LandingPage .info h1{
+    font-weight: bold;
+    font-size:5em;
+    margin: 0px 0px 0px -10px;
+  
+}
+
+.LandingPage .info  span{
+    margin-top: 0;
+    font-size:0.6em;
+    font-weight: 400;
+    opacity: 0.6;
+    margin-bottom: 50px;
+    letter-spacing: 3px;
+}
+
+.LandingPage .info a{
+    text-decoration: none;
+    background-color:#FFBD59 ;
+    color: white;
+   text-align: center;
+   padding: 20px;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+
+}
+
+
+.LandingPage .info a:hover{
+    background-color: white;
+    color: #FFBD59;
+    transition: 0.4s;
+    transform: scale(1.1.5);
+}
+
+
+@media screen and (max-width: 1137px){
+    .LandingPage .info{
+        position: relative;
+        right: 0px;
+       
+    }
+    
+   }
+           
+     @media screen and (max-width: 880px){
+
+        .blur{
+            width: 100%;
+            height: 100vh;
+            background-color:rgba(25, 24, 24, 0.342);
+            position: absolute;
+            z-index: 1;  
+          }
+          .LandingPage section img{
+
+            position: relative;
+            top: 100px;
+         margin-right: -100px;
+        z-index: 0;         }
+
+        .LandingPage section  .info{
+            position: relative;
+            bottom: 50px;
+            right: -100px; 
+        z-index: 2;   
+        }
+      }
+
+      @media screen and (max-width: 560px){
+        .LandingPage section  .info{
+            font-size: 0.8em;
+            position: relative;
+            bottom: 80px;
+        }
+
+        .LandingPage section  .info a{
+            width: 150px;
+            background-color: #ffbd59;
+        }
+      }
