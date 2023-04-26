@@ -40,10 +40,20 @@ transition: 0.4s;
     margin-right: 20px;
 }
 
+.notificacaoMb{
+    display: none;
+}
+
 @media screen and (max-width: 1137px){
    header{
     border: none;
    }
+   .notificacaoDesk{
+  display: none;
+}
+.notificacaoMb{
+    display: flex;
+}
    }
 
 

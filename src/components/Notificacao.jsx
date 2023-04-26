@@ -17,6 +17,12 @@ const Notificacao = () => {
       setNotificacao("")
     }
   
+    const FullNavBar = () => {
+      const nav = document.querySelector(".NavBar")
+      nav.style.width = "100%"
+      setNotificacao("")
+    }
+  
     const Fechar = () => {
       const nav = document.querySelector(".NavBar")
       nav.style.width = "0%"
@@ -53,12 +59,21 @@ const Notificacao = () => {
         <>
 
             <div className="notificacao">
-                <span>{notificacao.notificacao}</span>
+              <div className="notificacaoDesk">
+              <span>{notificacao.notificacao}</span>
                 <img src={ImgNotificaçoes} alt="" className='icon' value="Abrir" onClick={() => {
                     NavBar()
                 }} />
-
+              </div>
+            
+                <div className="notificacaoMb">
+                  <span>{notificacao.notificacao}</span>
+                  <img src={ImgNotificaçoes} alt="" className='icon' value="Abrir" onClick={() => {
+                     FullNavBar()
+                  }} />
+                </div>
             </div>
+            
 
             <div className="NavBar">
 

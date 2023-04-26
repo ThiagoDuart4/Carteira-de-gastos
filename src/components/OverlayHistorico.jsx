@@ -2,7 +2,7 @@ import React from 'react'
 import "../styles/OverlayHistorico.css"
 import { useEffect, useState } from 'react'
 import axios from 'axios'
-import lixeira from "../image/lixeira.png"
+import lixeira from "../image/lixeira2.png"
 import FecharImg from "../image/fechar.png"
 
 const OverlayHistorico = () => {
