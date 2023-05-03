@@ -10,17 +10,11 @@ import Enviar from "../image/enviar.png"
 
 const InputsCard = ({handleNoti}) => {
 
-
-
-
   const [DataInput, setDataInput] = useState({
     descricao: "",
-    ValorEntrada: "",
-    ValorSaida: "",
+    Valor: "",
     tipo: "",
   });
-
-  const [teste,setTeste] = useState(1)
 
   const formChange = (e) => {
     setDataInput((prev) => ({ ...prev, [e.target.name]: e.target.value }));
@@ -29,19 +23,13 @@ const InputsCard = ({handleNoti}) => {
   const btnEnviar = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("https://backend-kappa-five.vercel.app/gastos", DataInput);
+      await axios.post("https://backend-kappa-five.vercel.app/todos", DataInput);
       window.location.reload()
     } catch (err) {
       console.log(err);
     }
-// ADICIONANDO NOTIFICAO
-    setTeste( teste + 1)
-
-    handleNoti(teste)
+ console.log(DataInput)
   };
-
-  
-
 
   return (
     <div className="InputsCard">
@@ -64,7 +52,7 @@ const InputsCard = ({handleNoti}) => {
 
         </div>
         <div className="valor">
-          <label htmlFor="Valor Entrada">Valor: <input type="text" name="ValorEntrada" onChange={formChange}/></label>
+          <label htmlFor="Valor">Valor: <input type="number" name="Valor" onChange={formChange}/></label>
           <img src={Enviar} onClick={btnEnviar}></img>
         </div>
 

@@ -52,9 +52,6 @@ const Notificacao = () => {
         }
         fetchData()
       }, [])
-
-           
-  
     return (
         <>
 
@@ -87,7 +84,7 @@ const Notificacao = () => {
 
                                 <div className="Card" key={key}>
                                     <h1>{data.descricao}</h1>
-                                    {data.tipo == 'entrada'?<p>Você fez um deposito de <span>R${data.ValorEntrada}</span></p> :<p> Você retirou <span>R${data.ValorEntrada}</span></p>}
+                                    {data.tipo == 'entrada'?<p>Você fez um deposito de <span>R${data.valor}</span></p> :<p> Você retirou <span>R${data.ValorEntrada}</span></p>}
                                 </div>
 
                             )

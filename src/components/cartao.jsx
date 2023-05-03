@@ -19,7 +19,6 @@ const Cartao = () => {
         }
     }
     fetchData()},[])
-
  
   return (
     <div className="cartao">
@@ -33,7 +32,7 @@ const Cartao = () => {
         </div>
         <div className='Saldo'>
         <div className="titulo">
-            <h1>R${Data.ValorTotal}</h1>
+            <h1>R${Data.total}</h1>
                 <p>Aumento de 2% relacionado ao mes passado</p>
             </div>
 

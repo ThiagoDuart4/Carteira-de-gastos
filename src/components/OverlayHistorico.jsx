@@ -90,7 +90,7 @@ const OverlayHistorico = () => {
                                         <div className="cardResp" key={key}>
                                             <section>
                                                 <h1>{info.descricao}</h1>
-                                                <h3>R${info.ValorEntrada}</h3>
+                                                <h3>R${info.valor}</h3>
                                             </section>
                                             <section>
                                                 <h3>{info.tipo}</h3>

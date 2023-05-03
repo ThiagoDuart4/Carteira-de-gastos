@@ -8,11 +8,10 @@ import OverlayHistorico from './OverlayHistorico'
 const Historico = () => {
   const [Data, setData] = useState([])
   const [api,setApi] = useState('todos')
-
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get(`https://backend-kappa-five.vercel.app/${api}`)
+        const res = await axios.get( `https://backend-kappa-five.vercel.app/${api}`)
         setData(res.data);
 
       } catch (err) {
@@ -57,7 +56,7 @@ setApi(e.target.value)
       <div className="card-historico" key={key}>
         <section>
           <h1>{info.descricao}</h1>
-          <h3>R${info.ValorEntrada}</h3>
+          <h3>R${info.valor}</h3>
         </section>
         <section>
             <h3>{info.tipo}</h3>
